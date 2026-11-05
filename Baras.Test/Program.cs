@@ -43,9 +43,14 @@ namespace Baras.Test
                 if(serverAddresses != null)
                 {
                     var httpsAdress = serverAddresses.FirstOrDefault(a => a.StartsWith("https://"));
+                    var httpAddress = serverAddresses.FirstOrDefault(a => a.StartsWith("http://"));
                     if(httpsAdress != null)
                     {
                         Console.WriteLine($"Сервер запущен на порту {httpsAdress}/swagger");
+                    }
+                    if(httpAddress is null)
+                    {
+                        Console.WriteLine("Сервер запущен на порту {httpAddress}/swagger");
                     }
                 }
 
